@@ -10,7 +10,9 @@
 //Task (1)
 
 
-import java.util.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 public class Theatre {       //Create a new class named by "Theatre"
 
     public static int[] Row1 = new int[12];     //Assign Row1 length to 12
@@ -426,10 +428,32 @@ public class Theatre {       //Create a new class named by "Theatre"
     }
 
 
-/*-------------------------------------------------------------------------------------------------------------*/
+//-------------------------------------------------------------------------------------------------------------
 //Task (7)
-    private static void save(){
+    private static void save() {
+        try {
+            FileWriter enter_data = new FileWriter("Test.txt");
+            enter_data.write("Row1 : ");
+            for (int i : Row1) {
+                enter_data.write(Row1[i]+", ");
+            }
 
+            enter_data.write(System.lineSeparator());
+            enter_data.write("Row2 : ");
+            for (int i: Row2) {
+                enter_data.write(Row2[i]+", ");
+                }
+
+            enter_data.write(System.lineSeparator());
+            enter_data.write("Row3 : ");
+            for (int i : Row3) {
+                enter_data.write(Row3[i] +", ");
+                }
+
+            enter_data.close();//close the connection between the external file
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 
 
