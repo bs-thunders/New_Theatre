@@ -76,7 +76,7 @@ public class Theatre {       //Create a new class named by "Theatre"
                         sort_tickets();
                         break;
                     default:
-                        System.out.println("Invalued Inpur, Please Enter Valiued input");
+                        System.out.println("Invalid Input, Please Enter Valid input");
                 }
 
             }while(option == 0);
@@ -165,7 +165,7 @@ public class Theatre {       //Create a new class named by "Theatre"
                                 System.out.println("\nYou can book this seat ✍️(◔◡◔)\n");
 
                                 while(true) {
-                                    System.out.print("If you need book this sheet ?  YES/NO : ");
+                                    System.out.print("If you need book this seat ?  YES/NO : ");
                                     String get = scan.next().toLowerCase();
 
                                     if (get.equals("yes")) {
@@ -195,7 +195,7 @@ public class Theatre {       //Create a new class named by "Theatre"
                                 System.out.println("\nYou can book this seat ✍️(◔◡◔)\n");
 
                                 while(true) {
-                                    System.out.print("If you need book this sheet ?  YES/NO : ");
+                                    System.out.print("If you need book this seat ?  YES/NO : ");
                                     String get = scan.next().toLowerCase();
 
                                     if (get.equals("yes")) {
@@ -225,7 +225,7 @@ public class Theatre {       //Create a new class named by "Theatre"
                                 System.out.println("\nYou can book this seat ✍️(◔◡◔)\n");
 
                                 while(true) {
-                                    System.out.print("If you need book this sheet ?  YES/NO : ");
+                                    System.out.print("If you need book this seat ?  YES/NO : ");
                                     String get = scan.next().toLowerCase();
 
                                     if (get.equals("yes")) {
@@ -320,7 +320,6 @@ public class Theatre {       //Create a new class named by "Theatre"
 
 //Task (5)
     private static void cancel_ticket(){
-
     }
 
 /*-------------------------------------------------------------------------------------------------------------*/
