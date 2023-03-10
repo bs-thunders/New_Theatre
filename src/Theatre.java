@@ -85,95 +85,179 @@ public class Theatre {       //Create a new class named by "Theatre"
 
 //Task (3)
   private static void buy_ticket(Scanner scan) {
+   //---------------------Show_Sheet------------------------------------------------------------
+      System.out.println("\n\uD83E\uDD37\uD83C\uDFFB\u200D = Unavailable");
+      System.out.println("\uD83E\uDE91 = available");
 
-      System.out.println("You need to countinue ? YES/NO : ");
-      String input_countinue= scan.next();
+      System.out.println("\n\t\t\t\t\t      *********");
+      System.out.println("\t\t\t\t\t      * STAGE *");
+      System.out.println("\t\t\t\t\t      *********\n");
 
-        System.out.println("Enter Row number and Seat number which you need\n");
-        System.out.print("Row number : ");
+//-----------------------------------------------------------------------------
+      System.out.print("Row1\t         ");
 
-        int row_number = scan.nextInt();
-        System.out.print("\nSeat number : ");
-        int seat_number = scan.nextInt();
+      for(int x=0; x<Row1.length/2  ; x++){
+          if(Row1[x] == 1){
+              System.out.print("\uD83E\uDD37\uD83C\uDFFB\u200D");}
+          else{System.out.print("\uD83E\uDE91");}
+      }
+      System.out.print(" ");
 
-
-      switch (row_number) {
-          case 1:
-              if (seat_number >= 1 && seat_number <= 12) {
-                  if (Row1[seat_number - 1] == 0) {
-                      System.out.println("You can book this seat");
-                      System.out.println("If you need book this sheet ? Enter 1/0");
-                      int get = scan.nextInt();
-                      try {
-                          if (get == 1) {
-                              Row1[seat_number - 1] = 1;
-
-                              System.out.println("Your seat is booked");
-                          } else if (get == 0) {
-                              Row1[seat_number - 1] = 0;
-                          }
-                      } catch (Exception e) {
-                          System.out.println("Invalid number ");
-                      }
-                  } else {
-                      System.out.println("Seat was booked");
-                  }
-              } else {
-                  System.out.println("Invalid Seat Number");
-              }
-
-          case 2 :
-              if (seat_number >= 1 && seat_number <= 16) {
-                  if (Row2[seat_number - 1] == 0) {
-                      System.out.println("You can book this seat");
-                      System.out.println("If you need book this sheet (YES/No)");
-                      String get = scan.next().toLowerCase();
-                      try {
-                          if (get.equals("yes")) {
-                              Row2[seat_number - 1] = 1;
-
-                              System.out.println("Your seat is booked");
-                          } else if (get.equals("no")) {
-                              Row2[seat_number - 1] = 0;
-                          }
-                      } catch (Exception e) {
-                          System.out.println("Invalid number ");
-                      }
-                  } else {
-                      System.out.println("Seat was booked");
-                  }
-              } else {
-                  System.out.println("Invalid Seat Number");
-              }
-
-          case 3 :
-              if (seat_number >= 1 && seat_number <= 20) {
-                  if (Row3[seat_number - 1] == 0) {
-                      System.out.println("You can book this seat");
-                      System.out.println("If you need book this sheet ? Enter 1/0");
-                      int get = scan.nextInt();
-                      try {
-                          if (get == 1) {
-                              Row3[seat_number - 1] = 1;
-
-                              System.out.println("Your seat is booked");
-                          } else if (get == 0) {
-                              Row3[seat_number - 1] = 0;
-                          }
-                      } catch (Exception e) {
-                          System.out.println("Invalid number ");
-                      }
-                  } else {
-                      System.out.println("Seat was booked");
-                  }
-              } else {
-                  System.out.println("Invalid Seat Number"); 
-              }
-              break;
-          default :
-              System.out.println("Invalid Row");
+      for(int x=Row1.length/2; x<Row1.length ; x++){
+          if(Row1[x] == 1){
+              System.out.print("\uD83E\uDD37\uD83C\uDFFB\u200D");}
+          else{System.out.print("\uD83E\uDE91");}
       }
 
+//----------------------   2   -------------------------------------------------------
+
+      System.out.print("\nRow2\t    ");
+
+      for(int x=0; x<Row2.length/2  ; x++){
+          if(Row2[x] == 1){
+              System.out.print("\uD83E\uDD37\uD83C\uDFFB\u200D");}
+          else{System.out.print("\uD83E\uDE91");}
+      }
+      System.out.print(" ");
+
+      for(int x=Row2.length/2; x<Row2.length ; x++){
+          if(Row2[x] == 1){
+              System.out.print("\uD83E\uDD37\uD83C\uDFFB\u200D");}
+          else{System.out.print("\uD83E\uDE91");}
+      }
+
+//------------------------  3   -----------------------------------------------------
+      System.out.print("\nRow3\t");
+
+      for(int x=0; x<Row3.length/2  ; x++){
+          if(Row3[x] == 1){
+              System.out.print("\uD83E\uDD37\uD83C\uDFFB\u200D");}
+          else{System.out.print("\uD83E\uDE91");}
+      }
+      System.out.print(" ");
+
+      for(int x=Row3.length/2; x<Row3.length ; x++){
+          if(Row3[x] == 1){
+              System.out.print("\uD83E\uDD37\uD83C\uDFFB\u200D");}
+          else{System.out.print("\uD83E\uDE91");}
+      }
+
+  //-------------------------_start_buy_ticket_--------------------------------------------------------
+    while (true){
+
+            System.out.print("\nYou need to continue ? YES/NO : ");
+            String input_continue = scan.next().toLowerCase();
+
+            if(input_continue.equals("yes")) {
+                System.out.println("\nEnter Row number and Seat number which you need\n");
+
+                System.out.print("Row number : ");
+                int row_number = scan.nextInt();
+
+                System.out.print("\nSeat number : ");
+                int seat_number = scan.nextInt();
+
+
+                switch (row_number) {
+                    case 1:
+                        if (seat_number >= 1 && seat_number <= 12) {
+                            if (Row1[seat_number - 1] == 0) {
+                                System.out.println("\nYou can book this seat ✍️(◔◡◔)\n");
+
+                                while(true) {
+                                    System.out.print("If you need book this sheet ?  YES/NO : ");
+                                    String get = scan.next().toLowerCase();
+
+                                    if (get.equals("yes")) {
+                                        Row1[seat_number - 1] = 1;
+                                        System.out.println("\n   Your seat is booked\n");
+                                        break;}
+
+                                    else if (get.equals("no")) {
+                                        Row1[seat_number - 1] = 0;
+                                        break;}
+
+                                    else {
+                                        System.out.println("Invalid enter, Please Enter \"YES\" or \"NO\" ");}
+                                }
+                            } else {
+                                System.out.println("\n    Seat was booked\n");
+                            }
+                            break;
+                        } else {
+                            System.out.println("Invalid Seat Number");
+                            continue;
+                        }
+
+                    case 2:
+                        if (seat_number >= 1 && seat_number <= 16) {
+                            if (Row2[seat_number - 1] == 0) {
+                                System.out.println("\nYou can book this seat ✍️(◔◡◔)\n");
+
+                                while(true) {
+                                    System.out.print("If you need book this sheet ?  YES/NO : ");
+                                    String get = scan.next().toLowerCase();
+
+                                    if (get.equals("yes")) {
+                                        Row2[seat_number - 1] = 1;
+                                        System.out.println("\n   Your seat is booked\n");
+                                        break;}
+
+                                    else if (get.equals("no")) {
+                                        Row2[seat_number - 1] = 0;
+                                        break;}
+
+                                    else {
+                                        System.out.println("Invalid enter, Please Enter \"YES\" or \"NO\" ");}
+                                }
+                            } else {
+                                System.out.println("\n    Seat was booked\n");
+                            }
+                            break;
+                        } else {
+                            System.out.println("Invalid Seat Number");
+                            continue;
+                        }
+
+                    case 3:
+                        if (seat_number >= 1 && seat_number <= 20) {
+                            if (Row3[seat_number - 1] == 0) {
+                                System.out.println("\nYou can book this seat ✍️(◔◡◔)\n");
+
+                                while(true) {
+                                    System.out.print("If you need book this sheet ?  YES/NO : ");
+                                    String get = scan.next().toLowerCase();
+
+                                    if (get.equals("yes")) {
+                                        Row3[seat_number - 1] = 1;
+                                        System.out.println("\n   Your seat is booked\n");
+                                        break;}
+
+                                    else if (get.equals("no")) {
+                                        Row3[seat_number - 1] = 0;
+                                        break;}
+
+                                    else {
+                                        System.out.println("Invalid enter, Please Enter \"YES\" or \"NO\" ");}
+                                }
+                            } else {
+                                System.out.println("\n    Seat was booked\n");
+                            }
+                            break;
+                        } else {
+                            System.out.println("Invalid Seat Number");
+                            continue;
+                        }
+
+                    default:
+                        System.out.println("Invalid Row");
+                }
+            }
+            else if(input_continue.equals("no")){
+                break;
+            }
+            else {System.out.println("Invalid enter, Please Enter \"YES\" or \"NO\" ");}
+    }
   }
 
 //Task (4)
