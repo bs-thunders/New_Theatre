@@ -432,7 +432,7 @@ public class Theatre {       //Create a new class named by "Theatre"
 //Task (7)
     private static void save() {
         try {
-            FileWriter enter_data = new FileWriter("Test.txt");
+            FileWriter enter_data = new FileWriter("Text.txt");
             enter_data.write("Row1 : ");
             for (int i : Row1) {
                 enter_data.write(Row1[i]+", ");
