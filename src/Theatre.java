@@ -58,7 +58,7 @@ public class Theatre {       //Create a new class named by "Theatre"
                         print_seating_area();
                         break;
                     case 3:
-                        cancel_ticket();
+                        cancel_ticket(scan);
                         break;
                     case 4:
                         show_available();
@@ -319,7 +319,108 @@ public class Theatre {       //Create a new class named by "Theatre"
     }
 
 //Task (5)
-    private static void cancel_ticket(){
+    private static void cancel_ticket(Scanner scan){
+        while (true){
+
+            System.out.print("\nYou need to continue ? YES/NO : ");
+            String input_continue = scan.next().toLowerCase();
+
+            if(input_continue.equals("yes")) {
+                System.out.println("\nEnter Row number and Seat number which you need\n");
+
+                System.out.print("Row number : ");
+                int row_number = scan.nextInt();
+
+                System.out.print("\nSeat number : ");
+                int seat_number = scan.nextInt();
+
+                switch (row_number) {
+                    case 1 -> {
+                        if (seat_number >= 1 && seat_number <= 12) {
+                            if (Row1[seat_number - 1] == 0) {
+                                System.out.println("\n    This seat not book yet");
+                            } else {
+                                System.out.println("\n   you can cancel this seat\n");
+                                while (true) {
+                                    System.out.print("Are you need cancel this seat ? YES/NO :");
+                                    String get = scan.next().toLowerCase();
+
+                                    if (get.equals("yes")) {
+                                        Row1[seat_number - 1] = 0;
+                                        System.out.println("\n   Your seat is canceled\n");
+                                        break;
+                                    } else if (get.equals("no")) {
+                                        break;
+                                    } else {
+                                        System.out.println("Invalid enter, Please Enter \"YES\" or \"NO\" ");
+                                    }
+                                }
+
+                            }
+                        } else {
+                            System.out.println("Invalid Seat Number");
+                        }
+                    }
+                    case 2 -> {
+                        if (seat_number >= 1 && seat_number <= 16) {
+                            if (Row2[seat_number - 1] == 0) {
+                                System.out.println("\n    This seat not book yet");
+                            } else {
+                                System.out.println("\n   you can cancel this seat\n");
+                                while (true) {
+                                    System.out.print("Are you need cancel this seat ? YES/NO :");
+                                    String get = scan.next().toLowerCase();
+
+                                    if (get.equals("yes")) {
+                                        Row2[seat_number - 1] = 0;
+                                        System.out.println("\n   Your seat is canceled\n");
+                                        break;
+                                    } else if (get.equals("no")) {
+                                        break;
+                                    } else {
+                                        System.out.println("Invalid enter, Please Enter \"YES\" or \"NO\" ");
+                                    }
+                                }
+
+                            }
+                        } else {
+                            System.out.println("Invalid Seat Number");
+                        }
+                    }
+                    case 3 -> {
+                        if (seat_number >= 1 && seat_number <= 20) {
+                            if (Row3[seat_number - 1] == 0) {
+                                System.out.println("\n    This seat not book yet");
+                            } else {
+                                System.out.println("\n   you can cancel this seat\n");
+                                while (true) {
+                                    System.out.print("Are you need cancel this seat ? YES/NO :");
+                                    String get = scan.next().toLowerCase();
+
+                                    if (get.equals("yes")) {
+                                        Row3[seat_number - 1] = 0;
+                                        System.out.println("\n   Your seat is canceled\n");
+                                        break;
+                                    } else if (get.equals("no")) {
+                                        break;
+                                    } else {
+                                        System.out.println("Invalid enter, Please Enter \"YES\" or \"NO\" ");
+                                    }
+                                }
+
+                            }
+                        } else {
+                            System.out.println("Invalid Seat Number");
+                        }
+                    }
+                }
+            }
+
+            else if(input_continue.equals("no")){
+                break;
+            }
+            else {System.out.println("Invalid enter, Please Enter \"YES\" or \"NO\" ");}
+        }
     }
 
 /*-------------------------------------------------------------------------------------------------------------*/
