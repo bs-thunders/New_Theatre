@@ -315,23 +315,8 @@ public class Theatre {       //Create a new class named by "Theatre"
                 System.out.print("X");}
             else{System.out.print("O");}
         }
-//-----------------------------------------------------------------------------
-
-        /*System.out.println("\nIf you need go back, Please enter \"0\" and to quite enter \"1\"");
-        System.out.print("--> ");
-        int back = scan.nextInt();
-        switch (back){
-            case 0:
-                //
-            case 1:
-               //;
-            default:
-                System.out.println("Invalid input, Pleas Enter \"0\" or \"1\" ");*/
-        }
-
-
-
-
+        System.out.println();
+    }
 
 //Task (5)
     private static void cancel_ticket(){
