@@ -458,8 +458,39 @@ public class Theatre {       //Create a new class named by "Theatre"
 /*-------------------------------------------------------------------------------------------------------------*/
 //Task (8)
     private static void load(){
-    }
+        try {
+            File read_file = new File("Text.txt");
+            Scanner input = new Scanner(read_file);
 
+            for (int i = 0; i < 3; i++) {
+                String file_line = input.nextLine();
+                String removing = file_line.substring(7);
+                String remove_coma = removing.replaceAll(", ", "");
+
+                char[] Test = remove_coma.toCharArray();           //converts the string remove_coma to a char array using the toCharArray() method
+
+                switch (file_line.substring(0, 4)) {
+                    case "Row1" -> {
+                        for (int j = 0; j < Test.length ; j++) {
+                            Row1[j] = Character.getNumericValue(Test[j]);}     //Get numeric values of each element in char array name "Test" by using "Character.getNumericValue()" method and store those values in "Row1" array
+                    }
+                    case "Row2" -> {
+                        for (int j = 0; j < Test.length; j++) {
+                            Row2[j] = Character.getNumericValue(Test[j]);}      //Get numeric values of each element in char array name "Test" by using "Character.getNumericValue()" method and store those values in "Row2" array
+                    }
+                    case "Row3" -> {
+                        for (int j = 0; j < Test.length; j++) {
+                            Row3[j] = Character.getNumericValue(Test[j]);}      //Get numeric values of each element in char array name "Test" by using "Character.getNumericValue()" method and store those values in "Row3" array
+                    }
+                }
+            }
+        }
+        catch (IOException e){
+            System.out.println(e);}
+        System.out.println("\n\t-----------------------------------");
+        System.out.println("\t|        complete load data       |");
+        System.out.println("\t-----------------------------------");
+    }
 
 /*-------------------------------------------------------------------------------------------------------------*/
 //Task (13)
