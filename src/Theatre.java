@@ -21,9 +21,9 @@ public class Theatre {       //Create a new class named by "Theatre"
     //private static int scan;
 
 
-
+    static Scanner scan = new Scanner(System.in);  //Create a new object name "scan" to get user input
     public static void main(String[] args){     //Create the Main method
-        Scanner scan = new Scanner(System.in);  //Create a new object name "scan" to get user input
+
 
 
         System.out.println("\n\t\t*********************************");
@@ -52,7 +52,7 @@ public class Theatre {       //Create a new class named by "Theatre"
             do {
                 switch (option) {
                     case 1:
-                        buy_ticket(scan);
+                        buy_ticket();
                         break;
                     case 2:
                         print_seating_area();
@@ -84,7 +84,7 @@ public class Theatre {       //Create a new class named by "Theatre"
     }
 
 //Task (3)
-  private static void buy_ticket(Scanner scan) {
+  private static void buy_ticket() {
 
       System.out.println("You need to countinue ? YES/NO : ");
       String input_countinue= scan.next();
