@@ -21,9 +21,9 @@ public class Theatre {       //Create a new class named by "Theatre"
     //private static int scan;
 
 
-
+    static Scanner scan = new Scanner(System.in);  //Create a new object name "scan" to get user input
     public static void main(String[] args){     //Create the Main method
-        Scanner scan = new Scanner(System.in);  //Create a new object name "scan" to get user input
+
 
 
         System.out.println("\n\t\t*********************************");
@@ -32,6 +32,7 @@ public class Theatre {       //Create a new class named by "Theatre"
 
 //Task (2)
 
+        //noinspection InfiniteLoopStatement
         while (true){
             System.out.println("\n-------------------------------------------------");
             System.out.println("Please select an option:");
@@ -51,9 +52,9 @@ public class Theatre {       //Create a new class named by "Theatre"
 
             do {
                 switch (option) {
-                    case 1 -> buy_ticket(scan);
+                    case 1 -> buy_ticket();
                     case 2 -> print_seating_area();
-                    case 3 -> cancel_ticket(scan);
+                    case 3 -> cancel_ticket();
                     case 4 -> show_available();
                     case 5 -> save();
                     case 6 -> load();
@@ -67,7 +68,7 @@ public class Theatre {       //Create a new class named by "Theatre"
     }
 
 //Task (3)
-  private static void buy_ticket(Scanner scan) {
+  private static void buy_ticket() {
    //---------------------Show_Sheet------------------------------------------------------------
       System.out.println("\n\uD83E\uDD37\uD83C\uDFFB\u200D = Unavailable");
       System.out.println("\uD83E\uDE91 = available");
@@ -295,7 +296,7 @@ public class Theatre {       //Create a new class named by "Theatre"
     }
 
 //Task (5)
-    private static void cancel_ticket(Scanner scan){
+    private static void cancel_ticket(){
         while (true){
 
             System.out.print("\nYou need to continue ? YES/NO : ");
